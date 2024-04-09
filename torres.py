@@ -31,9 +31,6 @@ BORDER_COLOR = WHITE
 HIGHLIGHT_BORDER_COLOR = YELLOW
 
 # braces
-STD_OPEN_BRACE = "("        
-STD_CLOSED_BRACE = ")"        
-
 open_braces = { "(", "[", "{", "<" }
 close_braces = { ")", "]", "}", ">" }
 
@@ -55,9 +52,8 @@ BOTTOM_MARGIN = -4
 DISPLAY_HEIGHT = 1
 DISPLAY_SPACING = 0.25
 
-# TODO: space of block according to the number of sons - respace after changes
-# TODO: structure display
-# TODO: note display
+# TODO: space of blocks according to the number of sons - respace after changes
+# TODO: display for music notes
 # TODO: notes-as-stairs display
 
 # 🎆🎇✨🎻🪕  
@@ -67,366 +63,6 @@ DISPLAY_SPACING = 0.25
 # The class has not been actually used in the final project.
 # the empty tower may have subtowers set to None
 # or it may have an empty list of subtowers.
-class Tower_Structure():
-
-    # constructor
-    def __init__(self, subtowers=None, name = ""):   
-
-        self.subtowers = subtowers
-        self.name = ""
-
-    # to braces
-    def to_braces( self, level=0 ):
-        open_brace = STD_OPEN_BRACE
-        close_brace = STD_CLOSED_BRACE
-
-        ret = ""
-
-        ret += open_brace
-        if not self.subtowers is None:
-            for t in self.subtowers:
-                ret += t.to_braces(level=level+1) 
-        ret += close_brace
-
-        return ret
-
-    # set name
-    def set_name(self, name):
-
-        self.name = name
-
-        return self
-
-    # add subtower
-    def add_subtower(self, t):
-
-        if self.subtowers is None:
-            self.subtowers = []
-
-        self.subtowers.append(t)
-
-        return self
-
-    # add subtowers
-    def add_subtowers(self, towers):
-
-        if self.subtowers is None:
-            self.subtowers = []
-
-        for t in towers:
-            self.subtowers.append(t)
-
-        return self
-
-    # count floors    
-    def count_floors(self):
-
-        max = 0
-
-        if not self.subtowers is None:
-            for t in self.subtowers:
-                n = t.count_floors() + 1
-                if n>max:
-                    max = n
-        
-        return max
-
-    # count subtowers
-    def count_subtowers(self):
-
-        if self.subtowers is None:
-            return 0
-
-        return len(self.subtowers)
-
-    # tower structure from string
-    @staticmethod
-    def from_string( string, start=0, level = 0 ):
-
-        l = len(string)    
-        i = start
-
-        string = string.replace(' ', '')        # remove spaces
-
-        if string[i] in open_braces:  
-            t = Tower_Structure()            
-            i += 1
-            
-            while i<l:                                                                      
-                if string[i] in close_braces:
-                    return t, i
-
-                sub_tower, end = Tower_Structure.from_string( 
-                    string, i, level=level+1 
-                )
-                if not sub_tower is None:
-                    t.add_subtower(sub_tower)
-                i = end + 1
-
-    # tower structure from string
-    @staticmethod
-    def from_string_bottom_up( string, start=0, level = 0 ):
-
-        l = len(string)    
-        i = start
-
-        string = string.replace(' ', '')        # remove spaces
-
-        if string[i] in open_braces:  
-            st = []
-            i += 1
-            
-            while i<l:                                                                      
-                if string[i] in close_braces:
-                    t = Tower_Structure()
-                    t.add_subtowers(st)
-                    return t, i
-
-                sub_tower, end = Tower_Structure.from_string_bottom_up( 
-                    string, i, level=level+1 
-                )
-                if not sub_tower is None:
-                    st.append(sub_tower)
-                i = end + 1
-
-    # shuffle subtowers 
-    def shuffle_subtowers(self):
-
-        if self.subtowers is not None:
-            random.shuffle(self.subtowers)
-        
-        return self
-
-    # shuffle subtowers recursively
-    def shuffle_subtowers_recursively(self):
-
-        if self.subtowers is not None:
-            random.shuffle(self.subtowers)
-
-            for t in self.subtowers:
-                t.shuffle_subtowers_recursively()
-        
-        return self
-
-    # delete subtower by index
-    def delete_subtower(self, index):
-
-        if self.subtowers is not None:
-            self.subtowers.pop(index)
-        
-        return self
-    
-    # equality == for towers structures
-    def __eq__(self, other):
-
-        if not isinstance(other, self.__class__):
-            return False
-
-        if self.subtowers is None:
-            return other.subtowers is None
-        
-        if other.subtowers is None:
-            return False
-            
-        if len(self.subtowers) != len(other.subtowers):
-            return False
-        
-        for i in range(len(self.subtowers)):
-            if self.subtowers[i] != other.subtowers[i]:
-                return False
-
-        return True
-    
-    # non equality != for towers structures
-    def __ne__(self, other):
-
-        return not self.__eq__(other)
-
-    # remove duplicate subtowers
-    def remove_duplicate_subtowers(self):
-        if self.subtowers is None:
-            return self
-        
-        st = self.subtowers
-
-        i = 0
-        while i < len(st)-1:
-            j = i+1
-            while j < len(st):
-                if st[i] == st[j]:
-                    st.pop(j)
-                else:
-                    j += 1
-            i += 1
-        
-        return self
-
-    # remove duplicate subtowers recursively
-    def remove_duplicate_subtowers_recursively(self):
-        if self.subtowers is None:
-            return self
-        
-        if self.subtowers is not None:
-            for t in self.subtowers:
-                t.remove_duplicate_subtowers_recursively()
-
-        self.remove_duplicate_subtowers()
-
-        return self
-
-    # union
-    def union(self):
-        
-        t = Tower_Structure()
-
-        if self.subtowers is not None:
-            for s in self.subtowers:
-                if s.subtowers is not None:
-                    t.add_subtowers(s.subtowers)
-        
-        t.remove_duplicate_subtowers()
-
-        return t
-
-    # merge
-    def merge(self, other):
-        
-        t = Tower_Structure([self, other])
-
-        return t.union()
-
-
-    # singleton
-    def singleton(self):
-        
-        container = Tower_Structure()
-
-        container.add_subtower(self)
-
-        return container
-        
-    # pair
-    def pair(self, other):
-        
-        container = Tower_Structure()
-
-        container.add_subtower(self)
-        container.add_subtower(other)
-
-        return container
-    
-    # finite tuple
-    @staticmethod
-    def from_subtowers(subtowers):
-        
-        return Tower_Structure(subtowers)
-
-    # swap subtowers
-    def swap_subtowers(self, i, j):
-
-        if self.subtowers is None:
-            return
-        
-        if i>=len(self.subtowers) or j>=len(self.subtowers):
-            return
-        
-        temp = self.subtowers[i]
-        self.subtowers[i] = self.subtowers[j]
-        self.subtowers[j] = temp
-
-        return self
-    
-    # select elements
-    def select_elements(self, check_function):
-        
-        t = Tower_Structure()
-
-        if self.subtowers is not None:
-            for s in self.subtowers:
-                if check_function(s):
-                    t.add_subtower(s)
-        
-        return t
-
-    # needed: function to subtitute elements using dictionary
-
-    # is empty
-    def is_empty(self):
-        
-        if self.subtowers is None:
-            return True
-
-        return len(self.subtowers) == 0 
-
-    # has subtowers
-    def has_subtowers(self):
-
-        return not self.is_empty()
-
-    # is not empty = has subtowers
-    def is_not_empty(self):
-
-        return not self.is_empty()
-
-
-    # is a subtower of
-    def is_a_subtower_of(self, tower):
-
-        if tower.subtowers is None:
-            return False
-        
-        for s in tower.subtowers:
-            if s == self:
-                return True
-        
-        return False
-
-    # has subtower
-    def has_subtower(self, subtower):
-        if subtower is None:
-            return True    
-
-        if self.subtowers is None:
-            return False
-        
-        for s in self.subtowers:
-            if s == subtower:
-                return True
-        
-        return False
-
-    # next
-    def next(self):
-
-        return self.merge( self.singleton() )
-
-    # number n
-    @staticmethod
-    def tower_number(n):
-
-        t = Tower_Structure()
-
-        for i in range(0,n):
-            t = t.next()
-        
-        return t
-
-
-
-class TowerStructureTest(Scene):        
-
-    def construct(self):
-
-        s , _ = Tower_Structure.from_string_bottom_up( "()" )
-
-        t = Tower_Structure.tower_number(3)
-
-        print( s.to_braces() )
-        print( "floors : " + str(s.count_floors()))
-        print( "subtowers : " + str(s.count_subtowers()))
-
-# --------------------------------------------------------------
-
 
 
 # Class for towers. 
@@ -523,32 +159,13 @@ class Tower(VGroup):
             st.set_tower_border_color(scene, color, transition_run_time)
 
 
-    # highlight block border
-    def highlight_block_border(self, scene, transition_run_time=0.5):
-
-        self.set_block_border_color(scene, HIGHLIGHT_BORDER_COLOR, transition_run_time=transition_run_time)
-
+    
     # highlight block 
     def highlight_block(self, scene, transition_run_time=0.5):
 
         self.set_block_color(scene, HIGHLIGHT_BORDER_COLOR, transition_run_time=transition_run_time)
 
 
-
-    # highlight tower border    
-    def highlight_tower_border(self, scene, transition_run_time=0.5):
-        # idea: run_time divided buy descendants count
-        self.set_tower_border_color(scene, HIGHLIGHT_BORDER_COLOR, transition_run_time=transition_run_time)
-
-    # unhighlight block border
-    def unhighlight_block_border(self, scene, transition_run_time=0.5):
-
-        self.set_block_border_color(scene, BORDER_COLOR, transition_run_time=transition_run_time)
-
-    # unhighlight tower border
-    def unhighlight_tower_border(self, scene, transition_run_time=0.5):
-
-        self.set_tower_border_color(scene, BORDER_COLOR, transition_run_time=transition_run_time)
 
     # recursively copy heights and widths
     def copy_measures_to_block(self):
@@ -641,16 +258,12 @@ class Tower(VGroup):
 
 
     # tower from string bottom up
+    # returns (the tower, the index where it stopped)
     @staticmethod
     def from_string_bottom_up(
         string, 
-        start = 0, 
-        block_width = 2, 
-        block_height = 1, 
-        corner_radius = CORNER_RADIUS,
-        border_width = BORDER_WIDTH,
-        level = 0,
-        color_type = 0
+        start = 0, block_width = 2, block_height = 1, corner_radius = CORNER_RADIUS,
+        border_width = BORDER_WIDTH, level = 0, color_type = 0
     ):
 
         l = len(string)    
@@ -693,109 +306,6 @@ class Tower(VGroup):
             
         return 0
 
-    # select sound according to level, instrument, up or down
-    @staticmethod
-    def select_sound_by_level(scene, level, instrument="bass", up=True):
-
-        max = 7     # only works with 7 notes-intruments
-
-        if max <0:
-            return      # no sound
-
-        level = level % max
-
-        if not up:
-            level = 7-level
-
-        note = Std_Scale[level]
-        
-        scene.add_sound( "./instruments/" + instrument + "/" + note  )  
-        scene.add_sound( "./instruments/" + "elecbass" + "/" + note  )  
-        scene.add_sound( "./instruments/" + "trumpet" + "/" + note  )  
-
-
-    def create_subtowers(
-        self, up, scene, level, instrument, 
-        run_time, run_time_type, run_time_factor, move_from 
-    ):
-        if self.subtowers is not None:
-            for st in self.subtowers:
-                st.create(
-                    up, scene, level+1, instrument, 
-                    run_time, run_time_type, run_time_factor,
-                    move_from = move_from
-                )
-
-        
-    def create_block(
-        self, up, scene, level, 
-        instrument, run_time, move_from = None,
-        transition_run_time = 0.1
-    ):
-
-        center = self.rect.get_center()
-
-        if not move_from is None:            
-            self.rect.move_to( move_from )
-            self.border.move_to( move_from )
-        
-        Tower.select_sound_by_level(scene, level, instrument, up )
-
-
-        scene.play( 
-            FadeIn(self.rect), 
-            FadeIn(self.border), 
-            run_time = run_time  
-        )
-        
-
-        if move_from is not None:
-            scene.play( 
-                self.rect.animate.move_to(center), 
-                self.border.animate.move_to(center), 
-                run_time = transition_run_time
-            )
-
-    # run_time types for drawing towers: used only by create method
-    CONSTANT_RUNTIME = 0
-    LEVEL_RUNTIME = 1
-    WIDTH_RUNTIME = 2
-
-    # create tower top down or bottom up
-    def create(
-        self, up, scene, level, 
-        instrument = "bass", 
-        run_time = 0.2, run_time_type = CONSTANT_RUNTIME, run_time_factor = 2,
-        move_from = None,
-        transition_run_time = 0.1
-    ):
-        if run_time_type == self.LEVEL_RUNTIME:
-            run_time = run_time * ((1/run_time_factor)**level)        
-        elif run_time_type == self.WIDTH_RUNTIME:
-            run_time = self.block_width/run_time_factor
-
-        if up:
-            self.create_block( 
-                up, scene, level, instrument, 0.2, move_from, 
-                transition_run_time = transition_run_time
-            )
-            self.create_subtowers( 
-                up, scene, level, instrument, run_time, run_time_type, run_time_factor, move_from
-            )
-        else:
-            self.create_subtowers( 
-                up, scene, level, instrument, run_time, run_time_type, run_time_factor, move_from
-            )
-            self.create_block( 
-                up, scene, level, instrument, run_time, move_from,
-                transition_run_time = transition_run_time
-            )
-
-    # place_on # TODO: uses self.height instead of self.parts.height
-    def place_on(self, pos):
-
-        self.move_to( [pos[0], pos[1]+self.height/2, pos[2]]  )
-
     # place_on_earth
     def place_on_earth(self, earth):
 
@@ -807,47 +317,6 @@ class Tower(VGroup):
         return self.align_to( [0, base.get_top()[1], 0], DOWN  )
 
 
-    # raise copy 
-    def raise_tower_copy(
-        self, scene, pos, 
-        corner_radius = CORNER_RADIUS, 
-        border_width = BORDER_WIDTH, 
-        instrument = "bass",
-        color_type = 1
-    ):
-
-        width = self.block_width + SPACING*2
-        level = self.count_floors()
-        height = (FLOOR_RATIO ** level )
-
-        container = Tower( 
-            width, height, corner_radius*(CORNER_RATIO ** level ), border_width 
-        ).move_to(
-            [pos[0], pos[1]+height/2, pos[2]]
-        )
-
-        color = Tower.select_color_by_level(level, color_type)
-        container.set_color( color )
-
-        # create container
-        container.create( False, scene, level, instrument )
-
-        # move copy
-        cp = self.copy()
-        center = cp.get_center()
-        cp.shift([pos[0]-center[0], 0, 0])
-        cp.align_to(container.get_top(), DOWN)
-        reach = cp.get_center()
-        cp.move_to(center)
-        scene.play( cp.animate.move_to(reach) )
-
-        Tower.select_sound_by_level( scene, level, instrument)
-
-        container.set_subtowers([cp], 0, color_type)
-
-
-        return container
-    
     # get_left of towers
     @staticmethod
     def get_left_of_towers( towers ):
@@ -950,7 +419,7 @@ class Tower(VGroup):
     @staticmethod
     def raise_towers(
         scene, towers, corner_radius = CORNER_RADIUS, border_width = BORDER_WIDTH, 
-        instrument = "bass", color_type = 1, height = 0,
+        instrument = None, color_type = 1, height = 0,
         transitions_run_time = 0.05
     ):
         container = Tower.towers_container(
@@ -1530,101 +999,6 @@ class Tower(VGroup):
 
 
 
-
-
-
-
-
-class TowerTest(Scene):
-
-    def construct(self):
-        binary_tree =  " ( ( ((([][])([][]))(([][])([][]))) ((([][])([][]))(([][])([][])))  )( ((([][])([][]))(([][])([][]))) ((([][])([][]))(([][])([][])))  ) )  "
-        
-        prova = " ( (())(<<>><<()>>)  ) "
-
-        earth = -2
-
-        instrument = "elecbass"
-
-
-        s , _ = Tower.from_string_bottom_up( 
-            prova,0, 
-            2.7, 0.4, 0.1,
-            border_width = BORDER_WIDTH,
-            level = 0,
-            color_type = 0        
-        )
-        s.place_on([-3,earth,0])
-
-        self.play( Create( Line([-5,earth,0], [5,earth,0])))
-
-        s.create( False, self, 0, instrument, 0.05, Tower.CONSTANT_RUNTIME, 2, [6,earth,0] )
-
-        t = s.raise_tower_copy(self, [0, earth, 0], instrument=instrument, color_type=0)
-
-        self.wait(2)
-
-        u = t.raise_tower_copy(self, [3, earth, 0], instrument=instrument, color_type=0)
-
-        self.wait(2)
-
-    
-
-
-class TowerTest2(Scene):
-
-    def construct(self):
-        binary_tree =  " ( ( ((([][])([][]))(([][])([][]))) ((([][])([][]))(([][])([][])))  )( ((([][])([][]))(([][])([][]))) ((([][])([][]))(([][])([][])))  ) )  "
-        
-        prova1 = " ( ( ((< <> <> > <()>) ()) () ) ) "
-        prova2 = " ( () (()()) () )  "
-
-        earth = -2
-
-        instrument = "elecbass"
-
-        self.play( Create( Line([-5.5,earth,0], [5.5,earth,0])))
-
-
-        s , _ = Tower.from_string_bottom_up( 
-            prova1,0, 
-            4, 0.4, 0.1,
-            border_width = BORDER_WIDTH,
-            level = 0,
-            color_type = 0        
-        )
-        s.place_on([-4,earth,0])
-
-
-        s.create( False, self, 0, instrument, 0.05, Tower.CONSTANT_RUNTIME, 2, [6,earth,0] )
-
-        self.wait(2)
-
-    
-        t , _ = Tower.from_string_bottom_up( 
-            prova2,0, 
-            2.7, 0.4, 0.1,
-            border_width = BORDER_WIDTH,
-            level = 0,
-            color_type = 0        
-        )
-        t.place_on([0,earth,0])
-
-        t.create( False, self, 0, instrument, 0.05, Tower.CONSTANT_RUNTIME, 2, [6,earth,0] )
-
-        self.wait(2)
-
-        towers = [s,t]
-
-        container = Tower.towers_container( towers, color_type = 0 )
-
-        Tower.raise_towers( self, towers, instrument = instrument, color_type=0)
-
-        self.wait(2)
-
-
-
-
 # ---------------------------------
 
 # base class for instrument displays (they implement vibrate)
@@ -2033,17 +1407,6 @@ Pentatonic_Scale = ["Cs", "Ds", "Fs", "Gs", "As" ]
 Choords_1451 = [ ["C", "E", "G"], ["F", "A", "C"], ["G", "B", "D"], ["C", "E", "G"] ]
 Diatonic_Scale = [ "F", "C", "G", "D", "F", "A", "E", "B"]
 
-
-# Experimental Scales
-Snippet1_Scale = ["F", "G",  "E", "F", "D", "C", "A", "C2",]
-Snippet2_Scale = ["F", "G",  "E", "F", "D", "C", "A", "C2",]
-Snippet3_Scale = ["C", "D",  "E", "F", "D", "C", "B", "C",]
-Snippet4_Scale = ["C", "D",  "E", "F", "E", "D", "C", "C2",]
-Snippet5_Scale = C_Major_Scale
-Snippet6_Scale = ["C", "D",  "E", "F", "E", "C", "B", "C",]
-Snippet9_Scale = Diatonic_Scale
-
-
 # Std scale used as default
 Std_Scale = C_Major_Scale
 
@@ -2189,8 +1552,8 @@ PianoChoords = Instrument("pianochoords", icon_svg_file = "piano", max = 5, scal
 
 
 
-# the app (1)
-class TowerApp1(Scene):
+# the app 
+class TowerApp(Scene):
 
     def create_displays(
         self, instruments, colors, probabilities, gains = None,
@@ -2257,6 +1620,7 @@ class TowerApp1(Scene):
             self.play( *anis1, *anis2, run_time = 0.04 )
 
 
+
     def construct(self):
 
         # self.animateRain()
@@ -2267,7 +1631,7 @@ class TowerApp1(Scene):
         # self.animateExample1()
         # self.animateSingleton()
         # self.animateFirstFloor()
-        self.animateSelect()
+        # self.animateSelect()
         # self.animateInfinite()
         # self.animateSubstitute()
         # self.animateSubstitute2()
@@ -2278,7 +1642,7 @@ class TowerApp1(Scene):
 
         # self.try_string()
         # self.try_string_player()
-        # self.snippet9()
+        self.snippet1()
 
 
     # -------------- Scenes -----------------------
@@ -2296,7 +1660,6 @@ class TowerApp1(Scene):
         
 
     # Try string:
-    # binary_tree =  " ( ( ((([][])([][]))(([][])([][]))) ((([][])([][]))(([][])([][])))  )( ((([][])([][]))(([][])([][]))) ((([][])([][]))(([][])([][])))  ) )  "
     def try_string(self):
         
         prova1 = "( ( ( (()()) ((())())()) (()()) ) )"
@@ -2331,240 +1694,33 @@ class TowerApp1(Scene):
         self.wait(3)
 
 
-    def play_snippet(  
-        self, instruments, colors, probabilities, gains, off_opacities, 
-        sequence,
-        rule_display_size, rule_display_txt = None
+
+    def play_set(  
+        self, instruments, probabilities, sequence,
+        rule_display_size = 2, rule_display_txt = "♫♫"
     ):
         self.create_displays(
-            instruments, colors, probabilities, gains, 
-            off_opacities, separted = True,        
-            rule_title=None, rule_subtitle=rule_display_txt, rule_display_size=rule_display_size
-            # rule_title=None, rule_subtitle="Example", rule_display_size=rule_display_size
+            instruments, None, probabilities,  
+            rule_subtitle=rule_display_txt, rule_display_size=rule_display_size
         )
 
-        s_old = None
-        for p in sequence:
-            s , _ = Tower.from_string_bottom_up( p, 0,  7, 0.6, 0.2 )
-            s.animate.place_on_earth(self.earth)
-            if s_old is not None:
-                s_old.flush(self, 0.02)
+        s , _ = Tower.from_string_bottom_up( sequence, 0,  7, 0.6, 0.2 )
+        s.animate.place_on_earth(self.earth)
 
-            s.raise_tower(self, transitions_run_time=0.04,)
-            # self.update_displays(s)
-            s_old = s
+        s.raise_tower(self, transitions_run_time=0.04,)
 
         self.wait(3)
 
-        self.remove( s )
 
 
 
     def snippet1(self):
         
-        prova1 = " < ( (  ([[][]])  [][<>][]   ([[][]])  [] [] []      ) ) [][]  > "
+        sequence  = " < ( (  ([[][]])  [][<>][]   ([[][]])  [] [] []      ) ) [][]  > "
+        instruments = [Tom, GuitarChoords, Trumpet, Cymbals ]
+        probabilities = [ 1, 0.75, 0.5, 0.3  ]         
 
-        sequence = [prova1]
-        
-        # instrument
-        instruments = [Tom, BassChoords, Sax, Cymbals ]
-        probabilities = [ 1, 0.75, 1, 0.3  ]         
-        gains = [0, 0, 0, 0, 0]        
-        off_opacities = [ 1,  1,  1,  1, 1 ]
-
-        self.play_snippet(
-            instruments, None, probabilities, gains, off_opacities, 
-            sequence,
-            rule_display_size=4, rule_display_txt=None
-        )
-
-        self.wait(3)
-
-
-    def snippet2(self):
-        
-        prova1 =  "[  ([[[()]][]] [[]]) ([[[()]][]] [[]])   ([[]][][])   ]"
-
-        sequence = [prova1]
-
-        # instrument
-        instruments = [Tom, BassChoords, Sax, Trumpet, Cymbals ]
-        probabilities = [ 1, 0.75, 1, 1, 0.3  ] 
-        gains = [0 , -10, 0, 0, 0 ]        
-        off_opacities = [ 1,  1,  1,  1, 1 ]
-
-        self.play_snippet(
-            instruments, None, probabilities, gains, off_opacities, 
-            sequence,
-            rule_display_size=4, rule_display_txt=None
-        )
-
-
-
-
-    def snippet3(self):
-        
-        prova1 = " < [ [[] [[][]] ]] [ [[] [[][]] ]]  [ [[[][]]] [ [] [[]]]]   > "
-
-        sequence = [prova1]
-        
-        # instrument
-        instruments = [Tom, Trumpet, Sax ]
-        probabilities = [ 0.5, 1, 1, 1, 0.3  ] 
-        gains = [0 , 0, 0, 0, 0 ]        
-        off_opacities = [ 1,  1,  1,  1, 1 ]
-
-        self.play_snippet(
-            instruments, None, probabilities, gains, off_opacities, 
-            sequence,
-            rule_display_size=4, rule_display_txt=None
-        )
-
-
-
-
-    def snippet4(self):
-        
-        prova1 = " ( < < (<()>) ()()(()) > (( ()()()  ) () ( )) [][]>  ) "
-        # prova1 = " < < (<(())>) ()()((())(())) > >  "
-
-        sequence = [prova1]
-        
-        # instrument
-        instruments = [Tom, Trombone, Trumpet, ElecBass ]
-        instruments = [Tom, Trumpet, ElecBass ]
-        probabilities = [ 0.5, 1, 0.5, 1, 0.5 ] 
-        gains = [0 , 0, 0, -4, 0 ]        
-        off_opacities = [ 1,  1,  1,  1, 1 ]
-
-        self.play_snippet(
-            instruments, None, probabilities, gains, off_opacities, 
-            sequence,
-            rule_display_size=4, rule_display_txt="Math ♫♫"
-        )
-
-
-
-    def snippet5(self):
-        
-        prova1 = " ( [[  (<()>) ()() (())   () ]] ) "
-
-        sequence = [prova1]
-        
-        # instrument
-        instruments = [Tom, Trombone, ElecBass, Guitar, Dancers ]
-        probabilities = [ 0.5, 1, 1, 1, 0.5, 1 ] 
-        gains = [0 , 0, 0, -4, 0, 0 ]        
-        off_opacities = [ 1,  1,  1,  1, 1, 1 ]
-
-        self.play_snippet(
-            instruments, None, probabilities, gains, off_opacities, 
-            sequence,
-            rule_display_size=4, rule_display_txt=None
-        )
-
-
-    def snippet6(self):
-        
-        prova1 = " [[ < (()())  (((()()()))) [[][][]] [] []             > ]] "
-
-        sequence = [prova1]
-        
-        # instrument
-        instruments = [Tom, Sax, Trumpet, Guitar ]
-        probabilities = [ 0.5, 1, 1, 0.5, 0.5, 1 ] 
-        gains = [0 , 0, 0, 0, 0, 0 ]        
-        off_opacities = [ 1,  1,  1,  1, 1, 1 ]
-
-        self.play_snippet(
-            instruments, None, probabilities, gains, off_opacities, 
-            sequence,
-            4, "Math ♫♫"
-        )
-
-
-    def snippet7(self):
-        
-        prova1 = " (( ( ((())) ()  () (()) )  ((()()()) () ()) ))" 
-
-        sequence = [prova1]
-        
-        # instrument
-        instruments = [GuitarChoords, Tom,  ]
-        instruments = [PianoChoords, Guitar,  ]
-        Guitar.set_scale(PianoChoords_Scale)
-        
-        probabilities = [ 0.75, 0.75, 1  ] 
-        off_opacities = [ 1,  1,  1,  1, 1 ]
-
-        self.play_snippet(
-            instruments, None, probabilities, None, off_opacities, 
-            sequence,
-            rule_display_size=4, rule_display_txt="Math ♫♫"
-        )
-
-    def snippet7b(self):
-        
-        prova1 = " [ [[]][[]]  [[[][]][]] [[[][]][]] [][][[]]  [[[][]][]]  [[[]][[]]]   ] "
-        prova2 = " [ [[]][[]]  [[[][]][]] [[[][]][]] [][][[]]  [[[][[[]]]][]] ] "
-        prova3 = " [ [[]][[]]  [[[][]][[]]] [][][[[]]]  [[[][[[[]]]]][]] ] "
-
-        sequence = [prova1]
-        
-        # instrument
-        instruments = [PianoChoords, Guitar,  ]
-        Guitar.set_scale(PianoChoords_Scale)
-        
-        probabilities = [ 0.75, 0.75, 1  ] 
-        off_opacities = [ 1,  1,  1,  1, 1 ]
-
-        self.play_snippet(
-            instruments, None, probabilities, None, off_opacities, 
-            sequence,
-            rule_display_size=4, rule_display_txt=None
-        )
-
-    def snippet8(self):
-        
-        prova1 = " [ [[]][[]]  [[[][]][]] [[[][]][]] [][][[]]  [[[][]][]]  [[[]][[]]]   ]" 
-        # prova2 = " [ [[]][[]]  [[[[]]][]] [[[[]]][]] [][][[]]  [[[][]][]]  [[[]][[]]]   ]" 
-
-        sequence = [prova1]
-        
-        # instrument
-        instruments = [GuitarChoords, Drums, Bass ]
-        probabilities = [ 1, 0.75, 0.5  ] 
-        gains = [0,0,-5]
-        off_opacities = [ 1,  1,  1,  1, 1 ]
-
-        self.play_snippet(
-            instruments, None, probabilities, None, off_opacities, 
-            sequence,
-            rule_display_size=4, rule_display_txt="Math ♫♫"
-        )
-
-        self.wait(2)
-
-
-    def snippet9(self):
-        
-        prova1 = " [ [] [[][]] [[[]][]] [[[[]][]][]] ]" 
-
-        sequence = [prova1]
-        
-        # instrument
-        instruments = [Guitar, Drums, Bass, Cymbals]
-        probabilities = [ 1, 0.75, 0.7, 0.5 ] 
-        gains = [0,0,-5, 0]
-        off_opacities = [ 1,  1,  1,  1, 1 ]
-
-        self.play_snippet(
-            instruments, None, probabilities, None, off_opacities, 
-            sequence,
-            rule_display_size=4, rule_display_txt="Math ♫♫"
-        )
-
-        self.wait(2)
+        self.play_set( instruments, probabilities, sequence )
 
 
     
@@ -3497,17 +2653,6 @@ class TowerApp1(Scene):
         self.wait(3)
 
 
-
-
-
-
-
-
-
-
-        self.wait(1)
-
-
     # animate Numbers
     def animateNumbers(self):
         instruments = [Bass, Tom, GuitarChoords]
@@ -3536,262 +2681,3 @@ class TowerApp1(Scene):
         self.wait(1)
 
 
-
-
-class Music(Scene):
-    
-
-    def construct(self):
-
-        unicode_symbol_size = 60
-
-        analogies = [ 
-            [  
-            SVGMobject("./music_symbols/GClef", height=0.7, stroke_color=WHITE, fill_color = BLUE), 
-            Text("∮", font_size=unicode_symbol_size, color = YELLOW ),
-            ],
-            [  
-            SVGMobject("./music_symbols/FClef", height=0.7, stroke_color=WHITE, fill_color = BLUE), 
-            Text("∂", font_size=unicode_symbol_size, color = YELLOW ),
-            ],
-            [  
-            SVGMobject("./music_symbols/WholeNote", height=0.7, stroke_color=WHITE, fill_color = BLUE), 
-            Text("1", font_size=unicode_symbol_size, color = YELLOW ),
-            ],
-            [  
-            SVGMobject("./music_symbols/CClef", height=0.7, stroke_color=WHITE, fill_color = BLUE), 
-            Text("}", font_size=unicode_symbol_size, color = YELLOW ),
-            ],
-            [  
-            SVGMobject("./music_symbols/HalfNote", height=0.7, stroke_color=WHITE, fill_color = BLUE), 
-            MathTex("1 \over 2", font_size=unicode_symbol_size, color = YELLOW ),
-            ],
-            [  
-            SVGMobject("./music_symbols/QuarterNote", height=0.7, stroke_color=WHITE, fill_color = BLUE), 
-            MathTex("1 \over 4", font_size=unicode_symbol_size, color = YELLOW ),
-            ],
-            [  
-            SVGMobject("./music_symbols/Segno", height=0.7, stroke_color=WHITE, fill_color = BLUE), 
-            Text("ℵ", font_size=unicode_symbol_size, color = YELLOW ),
-            ],
-            [  
-            SVGMobject("./music_symbols/DottedQuarterNote", height=0.7, stroke_color=WHITE, fill_color = BLUE), 
-            MathTex("{1 \over 4} + {1 \over 4} \cdot {1 \over 2}", font_size=unicode_symbol_size, color = YELLOW ),
-            ], 
-            # [  
-            # SVGMobject("./music_symbols/Gruppetto", height=0.7, stroke_color=WHITE, fill_color = BLUE), 
-            # MathTex("\infty", font_size=unicode_symbol_size, color = YELLOW ),
-            # ], 
-            [  
-            Text("C♯", font_size=unicode_symbol_size, color = BLUE ),
-            MathTex("\mathfrak{c}", font_size=unicode_symbol_size, color = YELLOW ),
-            ], 
-            [  
-            Text("♬", font_size=unicode_symbol_size, color = BLUE ),
-            Text("π", font_size=unicode_symbol_size, color = YELLOW ),
-            ], 
-            [  
-            Text("ff", font_size=unicode_symbol_size, color = BLUE ),
-            MathTex("f^2", font_size=unicode_symbol_size, color = YELLOW ),
-            ], 
-        ] 
-
-        for a in analogies:            
-            a0 = a[0]
-            a1 = a[1]
-            a0.move_to( [random.random()*11-5.5, random.random()*7-3.5,0] )
-            arrow = Text("→", font_size=unicode_symbol_size, color = RED).next_to(a0)
-            a1.next_to(arrow)
-            a2 = a0.copy().next_to(arrow)
-            self.play( Write(a0), Create(arrow), run_time=1 )
-            self.play( Create( a2 , run_time = 1) )
-            self.play( ReplacementTransform(a2, a1), run_time = 1 )
-
-        self.wait(3)
-
-
-class Music2(Scene):
-    
-
-    def construct(self):
-
-        unicode_symbol_size = 80
-        height = 1
-
-        analogies = [ 
-            [  
-            SVGMobject("./music_symbols/GClef", height=1.5, stroke_color=WHITE, fill_color = BLUE), 
-            Text("∮", font_size=unicode_symbol_size+10, color = YELLOW ),
-            ],
-            [  
-            SVGMobject("./music_symbols/FClef", height=height, stroke_color=WHITE, fill_color = BLUE), 
-            Text("∂", font_size=unicode_symbol_size, color = YELLOW ),
-            ],
-            [  
-            SVGMobject("./music_symbols/CClef", height=height, stroke_color=WHITE, fill_color = BLUE), 
-            Text("}", font_size=unicode_symbol_size, color = YELLOW ),
-            ],
-        ] 
-
-        notes = ["A", "C", "F", "G"]
-
-        i = 0
-        for a in analogies:            
-            a0 = a[0]
-            a1 = a[1]
-            a0.move_to( [ -2, 3 - 2.5*i, 0] )
-            arrow = Text("→", font_size=unicode_symbol_size, color = RED).next_to(a0)
-            a1.next_to(arrow)
-            a2 = a0.copy().next_to(arrow)
-            self.add_sound( "./instruments/pianochoords/" + notes[i%len(notes)])
-            self.play( Write(a0), Create(arrow), run_time=1 )
-            self.play( Create( a2 , run_time = 0.5) )
-            self.add_sound( "./instruments/pianochoords/" + notes[(i+1)%len(notes)])
-            self.play( ReplacementTransform(a2, a1), run_time = 1 )
-            i += 1
-
-        self.add_sound( "./instruments/pianochoords/" + notes[1])
-        self.wait(0.5)
-        self.add_sound( "./instruments/pianochoords/" + notes[0])
-        self.wait(0.5)
-        self.add_sound( "./instruments/pianochoords/" + notes[0])
-
-        self.wait(3)
-
-
-class Cover(Scene):
-
-    def construct(self):
-
-        t1 = Text("¿Mates", color = YELLOW, font_size=80).move_to([-2,2,0])
-        t2 = Text("=", color = WHITE, font_size=60).next_to(t1, RIGHT*2)
-        t3 = Text("Música?", color = BLUE_D, font_size=80).next_to(t2, RIGHT*2)
-        t1 = Text("Matematica", color = YELLOW, font_size=80).move_to([-3,2,0])
-        t2 = Text("=", color = WHITE, font_size=60).next_to(t1, RIGHT*2)
-        t3 = Text("Musica?", color = BLUE_D, font_size=80).next_to(t2, RIGHT*2)
-        t1 = Text("Math", color = YELLOW, font_size=80).move_to([-2,2,0])
-        t2 = Text("=", color = WHITE, font_size=60).next_to(t1, RIGHT*2)
-        t3 = Text("Music?", color = BLUE_D, font_size=80).next_to(t2, RIGHT*2)
-        t1 = Text("El Sonido", color = YELLOW, font_size=60).move_to([-4.4,2,0])
-        t2 = Text("de", color = WHITE, font_size=60).next_to(t1, RIGHT*2)
-        t3 = Text("las Mates", color = BLUE_D, font_size=60).next_to(t2, RIGHT*2)
-        t3.align_to(t1.get_top(), UP)
-
-        s1 = SVGMobject("./music_symbols/GClef", height=2.5, stroke_color=WHITE, fill_color = BLUE)
-        s1.next_to(t1, DOWN*2)
-        s2 = Text("∮", font_size=160, color = YELLOW )
-        s2.stretch_to_fit_height(2.5)
-        s2.next_to(t3, DOWN*2)
-
-        self.add(t1) 
-        self.add(t2) 
-        self.add(t3) 
-
-        self.add(s1) 
-        self.add(s2) 
-
-        # self.wait(3)
-
-            
-class RulesAxioms(Scene):
-
-    def construct(self):
-        
-        font_size = 40
-        parejas = [
-            ["Bloque Rojo", "Conjunto Vacío"],
-            ["Fusión", "Pareja"],
-            ["Cambio", "Extensión"],
-            ["Borrar", "Extensión"],
-            ["Primer Piso", "Unión"],
-            ["Tamiz", "Especificación"],
-            ["Transformación", "Reemplazo"],
-            ["Ciudad", "Conjunto Infinito"],
-            ["Combo", "Conjunto Potencia"],
-        ]
-
-        reglas = Text("Reglas", font_size=font_size, color=YELLOW).move_to([-4,3.5,0])
-        arrow = Text("→", font_size = font_size, color = WHITE).next_to(reglas, RIGHT*11)
-        axiomas = Text("Axiomas", font_size=font_size, color=YELLOW).next_to(arrow, RIGHT*3)
-        self.play(
-            Write(reglas),
-            Write(axiomas)
-        )
-
-        t1 = reglas
-
-        for p in parejas:
-            t1 = Text(p[0], font_size=font_size, color=RED).next_to(t1, DOWN).align_to(
-                reglas.get_left(), LEFT
-            )
-            arrow = Text("→", font_size = font_size, color = WHITE).next_to(t1).align_to(
-                arrow.get_left(), LEFT
-            )
-            t2 = Text(p[1], font_size=font_size, color=BLUE).next_to(arrow).align_to(
-                axiomas.get_left(), LEFT
-            )
-            self.play(
-                Write(t1),
-                Create(arrow),
-                Write(t2)
-            )
-
-        self.wait(3)
-
-class RulesAxiomsIta(Scene):
-
-    def construct(self):
-        
-        font_size = 40
-        parejas = [
-            ["Blocco Rosso", "Insieme Vuoto"],
-            ["Fusione", "Coppia"],
-            ["Scambio", "Estensione"],
-            ["Doppioni", "Estensione"],
-            ["Primo Piano", "Unione"],
-            ["Setaccio", "Specificazione"],
-            ["Trasformazione", "Rimpiazzamento"],
-            ["Città", "Insieme Infinito"],
-            ["Combo", "Insieme Potenza"],
-        ]
-
-        reglas = Text("Regole", font_size=font_size, color=YELLOW).move_to([-4,3.5,0])
-        arrow = Text("→", font_size = font_size, color = WHITE).next_to(reglas, RIGHT*11)
-        axiomas = Text("Assiomi", font_size=font_size, color=YELLOW).next_to(arrow, RIGHT*3)
-        self.play(
-            Write(reglas),
-            Write(axiomas)
-        )
-
-        t1 = reglas
-
-        for p in parejas:
-            t1 = Text(p[0], font_size=font_size, color=RED).next_to(t1, DOWN).align_to(
-                reglas.get_left(), LEFT
-            )
-            arrow = Text("→", font_size = font_size, color = WHITE).next_to(t1).align_to(
-                arrow.get_left(), LEFT
-            )
-            t2 = Text(p[1], font_size=font_size, color=BLUE).next_to(arrow).align_to(
-                axiomas.get_left(), LEFT
-            )
-            self.play(
-                Write(t1),
-                Create(arrow),
-                Write(t2)
-            )
-
-        self.wait(3)
-
-
-class SonMusica(Scene):
-
-    def construct(self):
-
-        t1 = MathTex(r"\text{La } \mathbb{M}\text{usica}", font_size=140, color = BLUE).move_to([-2,3,0])
-        t2 = Text("della", font_size=70, color = WHITE).next_to(t1, DOWN*2)
-        t3 = MathTex(r"\mathbb{M}\text{atematica}", font_size=140, color = YELLOW).next_to(t2, DOWN*2)
-
-        self.add( t1, t2, t3)
-
-            
