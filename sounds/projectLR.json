@@ -1,0 +1,286 @@
+{
+    "targets": [
+        {
+            "isStage": true,
+            "name": "Stage",
+            "variables": {
+                "`jEk@4|i[#Fk?(8x)AV.-my variable": [
+                    "my variable",
+                    0
+                ]
+            },
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "backdrop1",
+                    "dataFormat": "svg",
+                    "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+                    "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+                    "rotationCenterX": 240,
+                    "rotationCenterY": 180
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "pop",
+                    "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 1123,
+                    "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 0,
+            "tempo": 60,
+            "videoTransparency": 50,
+            "videoState": "on",
+            "textToSpeechLanguage": null
+        },
+        {
+            "isStage": false,
+            "name": "Sprite1",
+            "variables": {},
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "costume1",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "bcf454acf82e4504149f7ffe07081dbc",
+                    "md5ext": "bcf454acf82e4504149f7ffe07081dbc.svg",
+                    "rotationCenterX": 48,
+                    "rotationCenterY": 50
+                },
+                {
+                    "name": "costume2",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "0fb9be3e8397c983338cb71dc84d0b25",
+                    "md5ext": "0fb9be3e8397c983338cb71dc84d0b25.svg",
+                    "rotationCenterX": 46,
+                    "rotationCenterY": 53
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "Kick Drum",
+                    "assetId": "711a1270d1cf2e5de9b145ee539213e4",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 4065,
+                    "md5ext": "711a1270d1cf2e5de9b145ee539213e4.wav"
+                },
+                {
+                    "name": "Large Cowbell",
+                    "assetId": "006316650ffc673dc02d36aa55881327",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 21337,
+                    "md5ext": "006316650ffc673dc02d36aa55881327.wav"
+                },
+                {
+                    "name": "Laser1",
+                    "assetId": "46571f8ec0f2cc91666c80e312579082",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 2246,
+                    "md5ext": "46571f8ec0f2cc91666c80e312579082.wav"
+                },
+                {
+                    "name": "Laser2",
+                    "assetId": "27654ed2e3224f0a3f77c244e4fae9aa",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 3287,
+                    "md5ext": "27654ed2e3224f0a3f77c244e4fae9aa.wav"
+                },
+                {
+                    "name": "Lo Gliss Tabla",
+                    "assetId": "d7cd24689737569c93e7ea7344ba6b0e",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 15255,
+                    "md5ext": "d7cd24689737569c93e7ea7344ba6b0e.wav"
+                },
+                {
+                    "name": "Low Boing",
+                    "assetId": "33e9314fd25ef8e800a749c86487f7a9",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 17273,
+                    "md5ext": "33e9314fd25ef8e800a749c86487f7a9.wav"
+                },
+                {
+                    "name": "Low Squeak",
+                    "assetId": "0aae06b65c875a6ba1fd51f4251b16b3",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 17273,
+                    "md5ext": "0aae06b65c875a6ba1fd51f4251b16b3.wav"
+                },
+                {
+                    "name": "Low Whoosh",
+                    "assetId": "d42f096c89764484a442046f4342c9ad",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 12193,
+                    "md5ext": "d42f096c89764484a442046f4342c9ad.wav"
+                },
+                {
+                    "name": "Machine",
+                    "assetId": "e7dfb630116153533989ff839c1973a5",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 11177,
+                    "md5ext": "e7dfb630116153533989ff839c1973a5.wav"
+                },
+                {
+                    "name": "Magic Spell",
+                    "assetId": "1cb60ecdb1075c8769cb346d5c2a22c7",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 43689,
+                    "md5ext": "1cb60ecdb1075c8769cb346d5c2a22c7.wav"
+                },
+                {
+                    "name": "Meow",
+                    "assetId": "83c36d806dc92327b9e7049a565c6bff",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 40681,
+                    "md5ext": "83c36d806dc92327b9e7049a565c6bff.wav"
+                },
+                {
+                    "name": "Oops",
+                    "assetId": "1139072c3d2d31fa5903c46632789d08",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 31497,
+                    "md5ext": "1139072c3d2d31fa5903c46632789d08.wav"
+                },
+                {
+                    "name": "Owl",
+                    "assetId": "e8b6d605f5a1bb36c29e4e21ef754209",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 35313,
+                    "md5ext": "e8b6d605f5a1bb36c29e4e21ef754209.wav"
+                },
+                {
+                    "name": "Pew",
+                    "assetId": "21a2cc083ef51767fb13791151194348",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 6097,
+                    "md5ext": "21a2cc083ef51767fb13791151194348.wav"
+                },
+                {
+                    "name": "Ping Pong Hit",
+                    "assetId": "8357b4bdf6fbe10b972be3b78167b3c8",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 11177,
+                    "md5ext": "8357b4bdf6fbe10b972be3b78167b3c8.wav"
+                },
+                {
+                    "name": "Pluck",
+                    "assetId": "0f2aa4c395cb932512defb2d14dc1691",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 7113,
+                    "md5ext": "0f2aa4c395cb932512defb2d14dc1691.wav"
+                },
+                {
+                    "name": "Police Siren",
+                    "assetId": "b10dcd209865fbd392534633307dafad",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 9145,
+                    "md5ext": "b10dcd209865fbd392534633307dafad.wav"
+                },
+                {
+                    "name": "Pop",
+                    "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 1123,
+                    "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                },
+                {
+                    "name": "Rattle",
+                    "assetId": "74f1c07e0bcd7811fd9d456a5f8667f8",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 28699,
+                    "md5ext": "74f1c07e0bcd7811fd9d456a5f8667f8.wav"
+                },
+                {
+                    "name": "Referee Whistle",
+                    "assetId": "8468b9b3f11a665ee4d215afd8463b97",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 14225,
+                    "md5ext": "8468b9b3f11a665ee4d215afd8463b97.wav"
+                },
+                {
+                    "name": "Ricochet",
+                    "assetId": "49407acfc004ec6960e8b84d363bd98d",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 24385,
+                    "md5ext": "49407acfc004ec6960e8b84d363bd98d.wav"
+                },
+                {
+                    "name": "Ring Tone",
+                    "assetId": "895c0887b4de4e0051e3adbceaf96061",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 71121,
+                    "md5ext": "895c0887b4de4e0051e3adbceaf96061.wav"
+                },
+                {
+                    "name": "Rip",
+                    "assetId": "4081f8fac2ca83bd34329400eb95bbde",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 12193,
+                    "md5ext": "4081f8fac2ca83bd34329400eb95bbde.wav"
+                },
+                {
+                    "name": "Roll Cymbal",
+                    "assetId": "da8355d753cd2a5ddd19cb2bb41c1547",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 57539,
+                    "md5ext": "da8355d753cd2a5ddd19cb2bb41c1547.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 1,
+            "visible": true,
+            "x": 0,
+            "y": 0,
+            "size": 100,
+            "direction": 90,
+            "draggable": false,
+            "rotationStyle": "all around"
+        }
+    ],
+    "monitors": [],
+    "extensions": [],
+    "meta": {
+        "semver": "3.0.0",
+        "vm": "2.3.0",
+        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
+}

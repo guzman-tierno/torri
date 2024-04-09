@@ -1,0 +1,358 @@
+{
+    "targets": [
+        {
+            "isStage": true,
+            "name": "Stage",
+            "variables": {
+                "`jEk@4|i[#Fk?(8x)AV.-my variable": [
+                    "my variable",
+                    0
+                ]
+            },
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "backdrop1",
+                    "dataFormat": "svg",
+                    "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+                    "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+                    "rotationCenterX": 240,
+                    "rotationCenterY": 180
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "pop",
+                    "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 1123,
+                    "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 0,
+            "tempo": 60,
+            "videoTransparency": 50,
+            "videoState": "on",
+            "textToSpeechLanguage": null
+        },
+        {
+            "isStage": false,
+            "name": "Sprite1",
+            "variables": {},
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "costume1",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "bcf454acf82e4504149f7ffe07081dbc",
+                    "md5ext": "bcf454acf82e4504149f7ffe07081dbc.svg",
+                    "rotationCenterX": 48,
+                    "rotationCenterY": 50
+                },
+                {
+                    "name": "costume2",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "0fb9be3e8397c983338cb71dc84d0b25",
+                    "md5ext": "0fb9be3e8397c983338cb71dc84d0b25.svg",
+                    "rotationCenterX": 46,
+                    "rotationCenterY": 53
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "Disconnect",
+                    "assetId": "56df0714ed1ed455a2befd787a077214",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 28449,
+                    "md5ext": "56df0714ed1ed455a2befd787a077214.wav"
+                },
+                {
+                    "name": "Dog1",
+                    "assetId": "b15adefc3c12f758b6dc6a045362532f",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 7993,
+                    "md5ext": "b15adefc3c12f758b6dc6a045362532f.wav"
+                },
+                {
+                    "name": "Dog2",
+                    "assetId": "cd8fa8390b0efdd281882533fbfcfcfb",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 6896,
+                    "md5ext": "cd8fa8390b0efdd281882533fbfcfcfb.wav"
+                },
+                {
+                    "name": "Door Closing",
+                    "assetId": "d8c78c6c272cca91342435ff543c1274",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 8129,
+                    "md5ext": "d8c78c6c272cca91342435ff543c1274.wav"
+                },
+                {
+                    "name": "Door Creak",
+                    "assetId": "56985da9c052a5e26007c99aa5a958f7",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 236286,
+                    "md5ext": "56985da9c052a5e26007c99aa5a958f7.wav"
+                },
+                {
+                    "name": "Doorbell",
+                    "assetId": "b67db6ed07f882e52a9ef4dbb76f5f64",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 109729,
+                    "md5ext": "b67db6ed07f882e52a9ef4dbb76f5f64.wav"
+                },
+                {
+                    "name": "Drum Bass1",
+                    "assetId": "48328c874353617451e4c7902cc82817",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 14210,
+                    "md5ext": "48328c874353617451e4c7902cc82817.wav"
+                },
+                {
+                    "name": "Drum Bass2",
+                    "assetId": "711a1270d1cf2e5de9b145ee539213e4",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 4065,
+                    "md5ext": "711a1270d1cf2e5de9b145ee539213e4.wav"
+                },
+                {
+                    "name": "Drum Bass3",
+                    "assetId": "c21704337b16359ea631b5f8eb48f765",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 18668,
+                    "md5ext": "c21704337b16359ea631b5f8eb48f765.wav"
+                },
+                {
+                    "name": "Drum Boing",
+                    "assetId": "5f4216970527d5a2e259758ba12e6a1b",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 19305,
+                    "md5ext": "5f4216970527d5a2e259758ba12e6a1b.wav"
+                },
+                {
+                    "name": "Drum Buzz",
+                    "assetId": "3650dc4262bcc5010c0d8fa8d7c670cf",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 24999,
+                    "md5ext": "3650dc4262bcc5010c0d8fa8d7c670cf.wav"
+                },
+                {
+                    "name": "Drum Roll",
+                    "assetId": "fb12e119d7a88a7f75ab980243f75073",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 38609,
+                    "md5ext": "fb12e119d7a88a7f75ab980243f75073.wav"
+                },
+                {
+                    "name": "Duck",
+                    "assetId": "af5b039e1b05e0ccb12944f648a8884e",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 12608,
+                    "md5ext": "af5b039e1b05e0ccb12944f648a8884e.wav"
+                },
+                {
+                    "name": "Dun Dun Dunnn",
+                    "assetId": "e956a99ab9ac64cfb5c6b2d8b1e949eb",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 64009,
+                    "md5ext": "e956a99ab9ac64cfb5c6b2d8b1e949eb.wav"
+                },
+                {
+                    "name": "Elec Piano A Minor",
+                    "assetId": "8fe470b5f2fb58364b153fe647adcbbf",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 96000,
+                    "md5ext": "8fe470b5f2fb58364b153fe647adcbbf.wav"
+                },
+                {
+                    "name": "Elec Piano C Major",
+                    "assetId": "228429930dfc60f48d75ce8e14291416",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 96000,
+                    "md5ext": "228429930dfc60f48d75ce8e14291416.wav"
+                },
+                {
+                    "name": "Elec Piano F Major",
+                    "assetId": "740098316ed06d9a64c14b93f65c5da5",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 96000,
+                    "md5ext": "740098316ed06d9a64c14b93f65c5da5.wav"
+                },
+                {
+                    "name": "Elec Piano G Major",
+                    "assetId": "5a5f5de80bcdf782250e889747b374bd",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 95582,
+                    "md5ext": "5a5f5de80bcdf782250e889747b374bd.wav"
+                },
+                {
+                    "name": "Fairydust",
+                    "assetId": "b92de59d992a655c1b542223a784cda6",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 24483,
+                    "md5ext": "b92de59d992a655c1b542223a784cda6.wav"
+                },
+                {
+                    "name": "Finger Snap",
+                    "assetId": "99d02ffb3212d86b3e5b173b6f33f835",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 8642,
+                    "md5ext": "99d02ffb3212d86b3e5b173b6f33f835.wav"
+                },
+                {
+                    "name": "Flam Snare",
+                    "assetId": "3b6cce9f8c56c0537ca61eee3945cd1d",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 9613,
+                    "md5ext": "3b6cce9f8c56c0537ca61eee3945cd1d.wav"
+                },
+                {
+                    "name": "Glass Breaking",
+                    "assetId": "4b33c58ba14e4555373fa2478b3f891f",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 52833,
+                    "md5ext": "4b33c58ba14e4555373fa2478b3f891f.wav"
+                },
+                {
+                    "name": "Glug",
+                    "assetId": "5606722c6105f3c58f9689a958f5c45f",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 12193,
+                    "md5ext": "5606722c6105f3c58f9689a958f5c45f.wav"
+                },
+                {
+                    "name": "Goal Cheer",
+                    "assetId": "a434069c58e79d42f5d21abb1c318919",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 84329,
+                    "md5ext": "a434069c58e79d42f5d21abb1c318919.wav"
+                },
+                {
+                    "name": "Gong",
+                    "assetId": "9d30c38443691e9626d510546d98327c",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 498207,
+                    "md5ext": "9d30c38443691e9626d510546d98327c.wav"
+                },
+                {
+                    "name": "Goose",
+                    "assetId": "16a3b9d516e125cdb2ad74cd8d205d71",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 17867,
+                    "md5ext": "16a3b9d516e125cdb2ad74cd8d205d71.wav"
+                },
+                {
+                    "name": "Guitar Strum",
+                    "assetId": "29000fa713f70765147ee0551fa42d9e",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 109783,
+                    "md5ext": "29000fa713f70765147ee0551fa42d9e.wav"
+                },
+                {
+                    "name": "Hand Clap",
+                    "assetId": "9502142875e67f7b0292a117a27e9563",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 5363,
+                    "md5ext": "9502142875e67f7b0292a117a27e9563.wav"
+                },
+                {
+                    "name": "Head Shake",
+                    "assetId": "e56fdc9f76d035ff01f4e7b39e9e9989",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 20321,
+                    "md5ext": "e56fdc9f76d035ff01f4e7b39e9e9989.wav"
+                },
+                {
+                    "name": "Hi Beatbox",
+                    "assetId": "5a07847bf246c227204728b05a3fc8f3",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 12747,
+                    "md5ext": "5a07847bf246c227204728b05a3fc8f3.wav"
+                },
+                {
+                    "name": "High Whoosh",
+                    "assetId": "6a10c380af8c400f8f6eea84eb28bd12",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 7113,
+                    "md5ext": "6a10c380af8c400f8f6eea84eb28bd12.wav"
+                },
+                {
+                    "name": "Jump",
+                    "assetId": "6fcd64d6357e4ea03704e5f96bfd35ba",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 7113,
+                    "md5ext": "6fcd64d6357e4ea03704e5f96bfd35ba.wav"
+                },
+                {
+                    "name": "Kick Drum",
+                    "assetId": "711a1270d1cf2e5de9b145ee539213e4",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 4065,
+                    "md5ext": "711a1270d1cf2e5de9b145ee539213e4.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 1,
+            "visible": true,
+            "x": 0,
+            "y": 0,
+            "size": 100,
+            "direction": 90,
+            "draggable": false,
+            "rotationStyle": "all around"
+        }
+    ],
+    "monitors": [],
+    "extensions": [],
+    "meta": {
+        "semver": "3.0.0",
+        "vm": "2.3.0",
+        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
+}

@@ -1,0 +1,231 @@
+{
+    "targets": [
+        {
+            "isStage": true,
+            "name": "Stage",
+            "variables": {
+                "`jEk@4|i[#Fk?(8x)AV.-my variable": [
+                    "my variable",
+                    0
+                ]
+            },
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "backdrop1",
+                    "dataFormat": "svg",
+                    "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+                    "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+                    "rotationCenterX": 240,
+                    "rotationCenterY": 180
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "pop",
+                    "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 1123,
+                    "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 0,
+            "tempo": 60,
+            "videoTransparency": 50,
+            "videoState": "on",
+            "textToSpeechLanguage": null
+        },
+        {
+            "isStage": false,
+            "name": "Sprite1",
+            "variables": {},
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "costume1",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "bcf454acf82e4504149f7ffe07081dbc",
+                    "md5ext": "bcf454acf82e4504149f7ffe07081dbc.svg",
+                    "rotationCenterX": 48,
+                    "rotationCenterY": 50
+                },
+                {
+                    "name": "costume2",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "0fb9be3e8397c983338cb71dc84d0b25",
+                    "md5ext": "0fb9be3e8397c983338cb71dc84d0b25.svg",
+                    "rotationCenterX": 46,
+                    "rotationCenterY": 53
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "High Whoosh",
+                    "assetId": "264948e08bc00f6221f2b708054caed1",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 22050,
+                    "sampleCount": 11290,
+                    "md5ext": "264948e08bc00f6221f2b708054caed1.wav"
+                },
+                {
+                    "name": "Big Boing",
+                    "assetId": "00d6e72ef8bf7088233e98fbcee0ec6d",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 18289,
+                    "md5ext": "00d6e72ef8bf7088233e98fbcee0ec6d.wav"
+                },
+                {
+                    "name": "Basketball Bounce",
+                    "assetId": "1727f65b5f22d151685b8e5917456a60",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 8129,
+                    "md5ext": "1727f65b5f22d151685b8e5917456a60.wav"
+                },
+                {
+                    "name": "Beat Box1",
+                    "assetId": "663270af0235bf14c890ba184631675f",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 24942,
+                    "md5ext": "663270af0235bf14c890ba184631675f.wav"
+                },
+                {
+                    "name": "Beat Box2",
+                    "assetId": "b9b8073f6aa9a60085ad11b0341a4af2",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 24942,
+                    "md5ext": "b9b8073f6aa9a60085ad11b0341a4af2.wav"
+                },
+                {
+                    "name": "Bite",
+                    "assetId": "0039635b1d6853face36581784558454",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 8129,
+                    "md5ext": "0039635b1d6853face36581784558454.wav"
+                },
+                {
+                    "name": "Boing",
+                    "assetId": "53a3c2e27d1fb5fdb14aaf0cb41e7889",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 7113,
+                    "md5ext": "53a3c2e27d1fb5fdb14aaf0cb41e7889.wav"
+                },
+                {
+                    "name": "Chirp",
+                    "assetId": "3b8236bbb288019d93ae38362e865972",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 6097,
+                    "md5ext": "3b8236bbb288019d93ae38362e865972.wav"
+                },
+                {
+                    "name": "Chomp",
+                    "assetId": "0b1e3033140d094563248e61de4039e5",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 12678,
+                    "md5ext": "0b1e3033140d094563248e61de4039e5.wav"
+                },
+                {
+                    "name": "Clang",
+                    "assetId": "4102d78dc98ae81448b140f35fd73e80",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 27433,
+                    "md5ext": "4102d78dc98ae81448b140f35fd73e80.wav"
+                },
+                {
+                    "name": "Clap Beatbox",
+                    "assetId": "abc70bb390f8e55f22f32265500d814a",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 9195,
+                    "md5ext": "abc70bb390f8e55f22f32265500d814a.wav"
+                },
+                {
+                    "name": "Clap Beatbox2",
+                    "assetId": "abc70bb390f8e55f22f32265500d814a",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 9195,
+                    "md5ext": "abc70bb390f8e55f22f32265500d814a.wav"
+                },
+                {
+                    "name": "Coin",
+                    "assetId": "1f81d88fb419084f4d82ffb859b94ed6",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 4065,
+                    "md5ext": "1f81d88fb419084f4d82ffb859b94ed6.wav"
+                },
+                {
+                    "name": "Collect",
+                    "assetId": "32514c51e03db680e9c63857b840ae78",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 14225,
+                    "md5ext": "32514c51e03db680e9c63857b840ae78.wav"
+                },
+                {
+                    "name": "Connect",
+                    "assetId": "9aad12085708ccd279297d4bea9c5ae0",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 23369,
+                    "md5ext": "9aad12085708ccd279297d4bea9c5ae0.wav"
+                },
+                {
+                    "name": "Cricket",
+                    "assetId": "a2b3cac37065c109aac17ed46005445e",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 7995,
+                    "md5ext": "a2b3cac37065c109aac17ed46005445e.wav"
+                },
+                {
+                    "name": "Crunch",
+                    "assetId": "cac3341417949acc66781308a254529c",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 5081,
+                    "md5ext": "cac3341417949acc66781308a254529c.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 1,
+            "visible": true,
+            "x": 0,
+            "y": 0,
+            "size": 100,
+            "direction": 90,
+            "draggable": false,
+            "rotationStyle": "all around"
+        }
+    ],
+    "monitors": [],
+    "extensions": [],
+    "meta": {
+        "semver": "3.0.0",
+        "vm": "2.3.0",
+        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
+}
