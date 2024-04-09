@@ -1,0 +1,158 @@
+{
+    "targets": [
+        {
+            "isStage": true,
+            "name": "Stage",
+            "variables": {
+                "`jEk@4|i[#Fk?(8x)AV.-my variable": [
+                    "my variable",
+                    0
+                ]
+            },
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "backdrop1",
+                    "dataFormat": "svg",
+                    "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+                    "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+                    "rotationCenterX": 240,
+                    "rotationCenterY": 180
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "pop",
+                    "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 1123,
+                    "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 0,
+            "tempo": 60,
+            "videoTransparency": 50,
+            "videoState": "on",
+            "textToSpeechLanguage": null
+        },
+        {
+            "isStage": false,
+            "name": "Sprite1",
+            "variables": {},
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "costume1",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "bcf454acf82e4504149f7ffe07081dbc",
+                    "md5ext": "bcf454acf82e4504149f7ffe07081dbc.svg",
+                    "rotationCenterX": 48,
+                    "rotationCenterY": 50
+                },
+                {
+                    "name": "costume2",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "0fb9be3e8397c983338cb71dc84d0b25",
+                    "md5ext": "0fb9be3e8397c983338cb71dc84d0b25.svg",
+                    "rotationCenterX": 46,
+                    "rotationCenterY": 53
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "A Piano",
+                    "assetId": "0727959edb2ea0525feed9b0c816991c",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 96000,
+                    "md5ext": "0727959edb2ea0525feed9b0c816991c.wav"
+                },
+                {
+                    "name": "B Piano",
+                    "assetId": "86826c6022a46370ed1afae69f1ab1b9",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 96000,
+                    "md5ext": "86826c6022a46370ed1afae69f1ab1b9.wav"
+                },
+                {
+                    "name": "C Piano",
+                    "assetId": "d27ed8d953fe8f03c00f4d733d31d2cc",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 96000,
+                    "md5ext": "d27ed8d953fe8f03c00f4d733d31d2cc.wav"
+                },
+                {
+                    "name": "D Piano",
+                    "assetId": "51381ac422605ee8c7d64cfcbfd75efc",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 96000,
+                    "md5ext": "51381ac422605ee8c7d64cfcbfd75efc.wav"
+                },
+                {
+                    "name": "E Piano",
+                    "assetId": "c818fdfaf8a0efcb562e24e794700a57",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 96000,
+                    "md5ext": "c818fdfaf8a0efcb562e24e794700a57.wav"
+                },
+                {
+                    "name": "F Piano",
+                    "assetId": "cdab3cce84f74ecf53e3941c6a003b5e",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 96000,
+                    "md5ext": "cdab3cce84f74ecf53e3941c6a003b5e.wav"
+                },
+                {
+                    "name": "G Piano",
+                    "assetId": "42bb2ed28e7023e111b33220e1594a6f",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 96000,
+                    "md5ext": "42bb2ed28e7023e111b33220e1594a6f.wav"
+                },
+                {
+                    "name": "C2 Piano",
+                    "assetId": "75d7d2c9b5d40dd4e1cb268111abf1a2",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 96000,
+                    "md5ext": "75d7d2c9b5d40dd4e1cb268111abf1a2.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 1,
+            "visible": true,
+            "x": 0,
+            "y": 0,
+            "size": 100,
+            "direction": 90,
+            "draggable": false,
+            "rotationStyle": "all around"
+        }
+    ],
+    "monitors": [],
+    "extensions": [],
+    "meta": {
+        "semver": "3.0.0",
+        "vm": "2.3.0",
+        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
+}

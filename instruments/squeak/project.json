@@ -1,0 +1,393 @@
+{
+    "targets": [
+        {
+            "isStage": true,
+            "name": "Stage",
+            "variables": {
+                "`jEk@4|i[#Fk?(8x)AV.-my variable": [
+                    "my variable",
+                    0
+                ]
+            },
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "backdrop1",
+                    "dataFormat": "svg",
+                    "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+                    "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+                    "rotationCenterX": 240,
+                    "rotationCenterY": 180
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "pop",
+                    "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 1123,
+                    "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 0,
+            "tempo": 60,
+            "videoTransparency": 50,
+            "videoState": "on",
+            "textToSpeechLanguage": null
+        },
+        {
+            "isStage": false,
+            "name": "Sprite1",
+            "variables": {},
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {
+                "_Xi^7VDK{hJqXLs%a5rw": {
+                    "opcode": "sound_playuntildone",
+                    "next": "[+VPM%iaVJzitTv%+Gc9",
+                    "parent": null,
+                    "inputs": {
+                        "SOUND_MENU": [
+                            1,
+                            "PQ_iA(QlL$bVs,RaA5U@"
+                        ]
+                    },
+                    "fields": {},
+                    "shadow": false,
+                    "topLevel": true,
+                    "x": 108,
+                    "y": 102
+                },
+                "PQ_iA(QlL$bVs,RaA5U@": {
+                    "opcode": "sound_sounds_menu",
+                    "next": null,
+                    "parent": "_Xi^7VDK{hJqXLs%a5rw",
+                    "inputs": {},
+                    "fields": {
+                        "SOUND_MENU": [
+                            "Low Squeak",
+                            null
+                        ]
+                    },
+                    "shadow": true,
+                    "topLevel": false
+                },
+                "[+VPM%iaVJzitTv%+Gc9": {
+                    "opcode": "sound_playuntildone",
+                    "next": "uZp6c({-qISJl?u8$Gb)",
+                    "parent": "_Xi^7VDK{hJqXLs%a5rw",
+                    "inputs": {
+                        "SOUND_MENU": [
+                            1,
+                            "H6)jG}unPrV{soL3K6D_"
+                        ]
+                    },
+                    "fields": {},
+                    "shadow": false,
+                    "topLevel": false
+                },
+                "H6)jG}unPrV{soL3K6D_": {
+                    "opcode": "sound_sounds_menu",
+                    "next": null,
+                    "parent": "[+VPM%iaVJzitTv%+Gc9",
+                    "inputs": {},
+                    "fields": {
+                        "SOUND_MENU": [
+                            "Low Squeak2",
+                            null
+                        ]
+                    },
+                    "shadow": true,
+                    "topLevel": false
+                },
+                "uZp6c({-qISJl?u8$Gb)": {
+                    "opcode": "sound_playuntildone",
+                    "next": ")|J(_NB3ZI~j@x60zvCA",
+                    "parent": "[+VPM%iaVJzitTv%+Gc9",
+                    "inputs": {
+                        "SOUND_MENU": [
+                            1,
+                            "V/g)0t2S@l94Pu90a#BC"
+                        ]
+                    },
+                    "fields": {},
+                    "shadow": false,
+                    "topLevel": false
+                },
+                "V/g)0t2S@l94Pu90a#BC": {
+                    "opcode": "sound_sounds_menu",
+                    "next": null,
+                    "parent": "uZp6c({-qISJl?u8$Gb)",
+                    "inputs": {},
+                    "fields": {
+                        "SOUND_MENU": [
+                            "Low Squeak3",
+                            null
+                        ]
+                    },
+                    "shadow": true,
+                    "topLevel": false
+                },
+                ")|J(_NB3ZI~j@x60zvCA": {
+                    "opcode": "sound_playuntildone",
+                    "next": "y|{ChF3p9B)H55K_-2Z$",
+                    "parent": "uZp6c({-qISJl?u8$Gb)",
+                    "inputs": {
+                        "SOUND_MENU": [
+                            1,
+                            "pnSNW~|y}$a9G;la-P)8"
+                        ]
+                    },
+                    "fields": {},
+                    "shadow": false,
+                    "topLevel": false
+                },
+                "pnSNW~|y}$a9G;la-P)8": {
+                    "opcode": "sound_sounds_menu",
+                    "next": null,
+                    "parent": ")|J(_NB3ZI~j@x60zvCA",
+                    "inputs": {},
+                    "fields": {
+                        "SOUND_MENU": [
+                            "Low Squeak4",
+                            null
+                        ]
+                    },
+                    "shadow": true,
+                    "topLevel": false
+                },
+                "y|{ChF3p9B)H55K_-2Z$": {
+                    "opcode": "sound_playuntildone",
+                    "next": "6K#Q**{F=KO8%BkDS-0f",
+                    "parent": ")|J(_NB3ZI~j@x60zvCA",
+                    "inputs": {
+                        "SOUND_MENU": [
+                            1,
+                            ")_2_}Pm^D*87S.e3)s[|"
+                        ]
+                    },
+                    "fields": {},
+                    "shadow": false,
+                    "topLevel": false
+                },
+                ")_2_}Pm^D*87S.e3)s[|": {
+                    "opcode": "sound_sounds_menu",
+                    "next": null,
+                    "parent": "y|{ChF3p9B)H55K_-2Z$",
+                    "inputs": {},
+                    "fields": {
+                        "SOUND_MENU": [
+                            "Low Squeak5",
+                            null
+                        ]
+                    },
+                    "shadow": true,
+                    "topLevel": false
+                },
+                "6K#Q**{F=KO8%BkDS-0f": {
+                    "opcode": "sound_playuntildone",
+                    "next": "E:Mnrz`KrO~/K{(L%SU:",
+                    "parent": "y|{ChF3p9B)H55K_-2Z$",
+                    "inputs": {
+                        "SOUND_MENU": [
+                            1,
+                            "t-bAMSEDn2wTb4+M=5-+"
+                        ]
+                    },
+                    "fields": {},
+                    "shadow": false,
+                    "topLevel": false
+                },
+                "t-bAMSEDn2wTb4+M=5-+": {
+                    "opcode": "sound_sounds_menu",
+                    "next": null,
+                    "parent": "6K#Q**{F=KO8%BkDS-0f",
+                    "inputs": {},
+                    "fields": {
+                        "SOUND_MENU": [
+                            "Low Squeak6",
+                            null
+                        ]
+                    },
+                    "shadow": true,
+                    "topLevel": false
+                },
+                "E:Mnrz`KrO~/K{(L%SU:": {
+                    "opcode": "sound_playuntildone",
+                    "next": "Bh34C!D^p$4iB2Gt[8lB",
+                    "parent": "6K#Q**{F=KO8%BkDS-0f",
+                    "inputs": {
+                        "SOUND_MENU": [
+                            1,
+                            "m5p/8`t^1@.U0BSt8b{s"
+                        ]
+                    },
+                    "fields": {},
+                    "shadow": false,
+                    "topLevel": false
+                },
+                "m5p/8`t^1@.U0BSt8b{s": {
+                    "opcode": "sound_sounds_menu",
+                    "next": null,
+                    "parent": "E:Mnrz`KrO~/K{(L%SU:",
+                    "inputs": {},
+                    "fields": {
+                        "SOUND_MENU": [
+                            "Low Squeak7",
+                            null
+                        ]
+                    },
+                    "shadow": true,
+                    "topLevel": false
+                },
+                "Bh34C!D^p$4iB2Gt[8lB": {
+                    "opcode": "sound_playuntildone",
+                    "next": null,
+                    "parent": "E:Mnrz`KrO~/K{(L%SU:",
+                    "inputs": {
+                        "SOUND_MENU": [
+                            1,
+                            "F:vU{/J{TO`7ltJ(#/0V"
+                        ]
+                    },
+                    "fields": {},
+                    "shadow": false,
+                    "topLevel": false
+                },
+                "F:vU{/J{TO`7ltJ(#/0V": {
+                    "opcode": "sound_sounds_menu",
+                    "next": null,
+                    "parent": "Bh34C!D^p$4iB2Gt[8lB",
+                    "inputs": {},
+                    "fields": {
+                        "SOUND_MENU": [
+                            "Low Squeak8",
+                            null
+                        ]
+                    },
+                    "shadow": true,
+                    "topLevel": false
+                }
+            },
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "costume1",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "bcf454acf82e4504149f7ffe07081dbc",
+                    "md5ext": "bcf454acf82e4504149f7ffe07081dbc.svg",
+                    "rotationCenterX": 48,
+                    "rotationCenterY": 50
+                },
+                {
+                    "name": "costume2",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "0fb9be3e8397c983338cb71dc84d0b25",
+                    "md5ext": "0fb9be3e8397c983338cb71dc84d0b25.svg",
+                    "rotationCenterX": 46,
+                    "rotationCenterY": 53
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "Low Squeak",
+                    "assetId": "4b16bdb3c6ca4c02c43e098e1bbc00a0",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 22050,
+                    "sampleCount": 17272,
+                    "md5ext": "4b16bdb3c6ca4c02c43e098e1bbc00a0.wav"
+                },
+                {
+                    "name": "Low Squeak2",
+                    "assetId": "7c4689b70ac679297ba88916a0c7afbe",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 22050,
+                    "sampleCount": 13709,
+                    "md5ext": "7c4689b70ac679297ba88916a0c7afbe.wav"
+                },
+                {
+                    "name": "Low Squeak3",
+                    "assetId": "0c043af63b286df9ac1e0b129412d04d",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 23685,
+                    "md5ext": "0c043af63b286df9ac1e0b129412d04d.wav"
+                },
+                {
+                    "name": "Low Squeak4",
+                    "assetId": "a3ecc857377701615deacfc53d6903d1",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 18798,
+                    "md5ext": "a3ecc857377701615deacfc53d6903d1.wav"
+                },
+                {
+                    "name": "Low Squeak5",
+                    "assetId": "f1aa4f4af61c43f5f6ba78da962aa557",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 14918,
+                    "md5ext": "f1aa4f4af61c43f5f6ba78da962aa557.wav"
+                },
+                {
+                    "name": "Low Squeak6",
+                    "assetId": "d206c2c26b22ca33b3ea54e6e45c80de",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 11841,
+                    "md5ext": "d206c2c26b22ca33b3ea54e6e45c80de.wav"
+                },
+                {
+                    "name": "Low Squeak7",
+                    "assetId": "bf0c2d4926ced5df8fd631475d22506d",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 9398,
+                    "md5ext": "bf0c2d4926ced5df8fd631475d22506d.wav"
+                },
+                {
+                    "name": "Low Squeak8",
+                    "assetId": "6c9c8382781a4363a05e749f01beb57d",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 7459,
+                    "md5ext": "6c9c8382781a4363a05e749f01beb57d.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 1,
+            "visible": true,
+            "x": 0,
+            "y": 0,
+            "size": 100,
+            "direction": 90,
+            "draggable": false,
+            "rotationStyle": "all around"
+        }
+    ],
+    "monitors": [],
+    "extensions": [],
+    "meta": {
+        "semver": "3.0.0",
+        "vm": "2.3.0",
+        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
+}
