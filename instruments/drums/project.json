@@ -1,0 +1,198 @@
+{
+    "targets": [
+        {
+            "isStage": true,
+            "name": "Stage",
+            "variables": {
+                "`jEk@4|i[#Fk?(8x)AV.-my variable": [
+                    "my variable",
+                    0
+                ]
+            },
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "backdrop1",
+                    "dataFormat": "svg",
+                    "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+                    "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+                    "rotationCenterX": 240,
+                    "rotationCenterY": 180
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "pop",
+                    "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                    "dataFormat": "wav",
+                    "format": "",
+                    "rate": 48000,
+                    "sampleCount": 1123,
+                    "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 0,
+            "tempo": 60,
+            "videoTransparency": 50,
+            "videoState": "on",
+            "textToSpeechLanguage": null
+        },
+        {
+            "isStage": false,
+            "name": "Sprite1",
+            "variables": {},
+            "lists": {},
+            "broadcasts": {},
+            "blocks": {},
+            "comments": {},
+            "currentCostume": 0,
+            "costumes": [
+                {
+                    "name": "costume1",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "bcf454acf82e4504149f7ffe07081dbc",
+                    "md5ext": "bcf454acf82e4504149f7ffe07081dbc.svg",
+                    "rotationCenterX": 48,
+                    "rotationCenterY": 50
+                },
+                {
+                    "name": "costume2",
+                    "bitmapResolution": 1,
+                    "dataFormat": "svg",
+                    "assetId": "0fb9be3e8397c983338cb71dc84d0b25",
+                    "md5ext": "0fb9be3e8397c983338cb71dc84d0b25.svg",
+                    "rotationCenterX": 46,
+                    "rotationCenterY": 53
+                }
+            ],
+            "sounds": [
+                {
+                    "name": "Drum Bass1",
+                    "assetId": "48328c874353617451e4c7902cc82817",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 14210,
+                    "md5ext": "48328c874353617451e4c7902cc82817.wav"
+                },
+                {
+                    "name": "Drum Bass2",
+                    "assetId": "711a1270d1cf2e5de9b145ee539213e4",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 4065,
+                    "md5ext": "711a1270d1cf2e5de9b145ee539213e4.wav"
+                },
+                {
+                    "name": "Drum Bass3",
+                    "assetId": "c21704337b16359ea631b5f8eb48f765",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 18668,
+                    "md5ext": "c21704337b16359ea631b5f8eb48f765.wav"
+                },
+                {
+                    "name": "Hi Na Tabla",
+                    "assetId": "35b42d98c43404a5b1b52fb232a62bd7",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 8916,
+                    "md5ext": "35b42d98c43404a5b1b52fb232a62bd7.wav"
+                },
+                {
+                    "name": "High Conga",
+                    "assetId": "16144544de90e98a92a265d4fc3241ea",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 17832,
+                    "md5ext": "16144544de90e98a92a265d4fc3241ea.wav"
+                },
+                {
+                    "name": "High Hat",
+                    "assetId": "0d91b2759ac861d156235f5ecf8d3218",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 3049,
+                    "md5ext": "0d91b2759ac861d156235f5ecf8d3218.wav"
+                },
+                {
+                    "name": "Kick Drum",
+                    "assetId": "711a1270d1cf2e5de9b145ee539213e4",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 4065,
+                    "md5ext": "711a1270d1cf2e5de9b145ee539213e4.wav"
+                },
+                {
+                    "name": "Large Cowbell",
+                    "assetId": "006316650ffc673dc02d36aa55881327",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 21337,
+                    "md5ext": "006316650ffc673dc02d36aa55881327.wav"
+                },
+                {
+                    "name": "Lo Geh Tabla",
+                    "assetId": "9205359ab69d042ed3da8a160a651690",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 67012,
+                    "md5ext": "9205359ab69d042ed3da8a160a651690.wav"
+                },
+                {
+                    "name": "Low Conga",
+                    "assetId": "0b6f94487cd8a1cf0bb77e15966656c3",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 18250,
+                    "md5ext": "0b6f94487cd8a1cf0bb77e15966656c3.wav"
+                },
+                {
+                    "name": "Muted Conga",
+                    "assetId": "1d4abbe3c9bfe198a88badb10762de75",
+                    "dataFormat": "wav",
+                    "rate": 48000,
+                    "sampleCount": 9891,
+                    "md5ext": "1d4abbe3c9bfe198a88badb10762de75.wav"
+                },
+                {
+                    "name": "Small Cowbell",
+                    "assetId": "e29154f53f56f96f8a3292bdcddcec54",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 10161,
+                    "md5ext": "e29154f53f56f96f8a3292bdcddcec54.wav"
+                },
+                {
+                    "name": "Snare Drum",
+                    "assetId": "c27fb569aba99c7203e954aecb1ed8e4",
+                    "dataFormat": "wav",
+                    "rate": 22050,
+                    "sampleCount": 3049,
+                    "md5ext": "c27fb569aba99c7203e954aecb1ed8e4.wav"
+                }
+            ],
+            "volume": 100,
+            "layerOrder": 1,
+            "visible": true,
+            "x": 0,
+            "y": 0,
+            "size": 100,
+            "direction": 90,
+            "draggable": false,
+            "rotationStyle": "all around"
+        }
+    ],
+    "monitors": [],
+    "extensions": [],
+    "meta": {
+        "semver": "3.0.0",
+        "vm": "2.3.0",
+        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
+}
