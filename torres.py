@@ -2681,3 +2681,14 @@ class TowerApp(Scene):
         self.wait(1)
 
 
+
+    #start here if you wanna experiment with the code
+
+    def snippet1(self):
+        
+        sequence  = " < ( (  ([[][]])  [][<>][]   ([[][]])  [] [] []      ) ) [][]  > "
+        instruments = [Tom, GuitarChoords, Trumpet, Cymbals ]
+        probabilities = [ 1, 0.75, 0.5, 0.3  ]         
+
+        self.play_set( instruments, probabilities, sequence )
+
